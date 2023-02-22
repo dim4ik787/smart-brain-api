@@ -5,20 +5,11 @@ import bcrypt from 'bcrypt-nodejs';
 import knex from 'knex';
 
 import { register } from './contollers/register.js';
-import { signin } from './contollers/signIn.js';
+import { signin } from './contollers/signin.js';
 import { image, handleApiCall } from './contollers/image.js';
 import { profile } from './contollers/profile.js';
 
-const db = knex({
-  client: 'pg',
-  connection: {
-    host: '127.0.0.1',
-    port: 5432,
-    user: 'dmitrii',
-    password: '',
-    database: 'smart-brain'
-  }
-});
+const db = knex({});
 
 const app = express();
 
