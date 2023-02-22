@@ -26,7 +26,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send(dataBase.users)
+  res.send("Api works!")
 });
 app.get('/profile/:id', profile(db));
 
