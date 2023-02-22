@@ -28,5 +28,5 @@ export const register = (db, bcrypt) => (req, res) => {
       .then(trx.commit)
       .catch(trx.rollback)
   })
-    .catch(err => res.status(400).json('this user exists'));
+    .catch(err => res.status(400).json(err));
 }
