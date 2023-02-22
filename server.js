@@ -9,7 +9,16 @@ import { signin } from './contollers/signin.js';
 import { image, handleApiCall } from './contollers/image.js';
 import { profile } from './contollers/profile.js';
 
-const db = knex({});
+const db = knex({
+  client: 'pg',
+  connection: {
+    host: process.env.hostname,
+    port: 5432,
+    user: process.env.username,
+    password: process.env.password,
+    database: process.env.database
+  }
+});
 
 const app = express();
 
